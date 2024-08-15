@@ -1,0 +1,13 @@
+{
+    "name": "pipelien_two",
+    "nodes": [
+        {
+            "id": "n-001",
+            "name": "node01"
+        },
+        {
+            "id": "n-002",
+            "name": "node02"
+        }
+    ]
+}
