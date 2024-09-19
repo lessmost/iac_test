@@ -1,0 +1,122 @@
+{
+    "version": "v1",
+    "kind": "pipeline",
+    "metadata": {
+        "name": "d-xxxxx",
+        "displayName": "批处理一",
+        "enable": true
+    },
+    "cronInfo": {
+        "cronBeginDate": -28800000,
+        "cronEndDate": 253370736000000,
+        "triggerType": 0,
+        "cronType": 2,
+        "timeZoneId": "Asia/Shanghai",
+        "cronStr": "00 00 00-23/1 * * ?",
+        "cronSwitch": true,
+        "cronParam": {
+            "triggerType": "0",
+            "dateTime": "00:00",
+            "fixedType": "range",
+            "rangeStart": "00:00",
+            "rangeEnd": "23:59",
+            "between": "1",
+            "hours": [
+                "1"
+            ]
+        }
+    },
+    "extend": {
+        "notification" : {
+          "notificationFail": false,
+          "notificationSuccess": false,
+          "notificationSla": false,
+          "notificationPreSla": false
+        }
+        
+    },
+    "nodes": [
+        {
+            "nodeName": "ADB Spark filter ",
+            "nodeType": 47,
+            "nodeContent": {
+                "uid": "1673826650152166",
+                "groupName": "job_resource",
+                "data": {
+                    "args": [
+                        "kafka_groupId2",
+                        "ove-spark-test-hangzhou"
+                    ],
+                    "name": "filter job",
+                    "file": "oss: //ove-spark-test-hangzhou/spark-streaming-example-1.0-SNAPSHOT.jar",
+                    "className": "com.jj.streaming.KafkaBatchFilter",
+                    "jars": "oss://ove-spark-test-hangzhou/kafka-clients-2.8.1.jar,oss://ove-spark-test-hangzhou/spark-sql-kafka-0-10_2.12-3.2.0.jar,oss://ove-spark-test-hangzhou/spark-token-provider-kafka-0-10_2.  12-3.2.0.jar,oss://ove-spark-test-hangzhou/commons-pool2-2.12.0.jar",
+                    "conf": {
+                        "spark.driver.resourceSpec": "small",
+                        "spark.executor.instances": 2,
+                        "spark.executor.resourceSpec": "small",
+                        "spark.adb.eni.enabled": "true",
+                        "spark.adb.eni.vswitchId": "vsw-23hqpleox",
+                        "spark.adb.eni.securityGroupId": "sg-bp11zuxd4l8nkhzy2ykb"
+                    }
+                },
+                "appType": "Batch",
+                "appName": "batchjobfilter",
+                "clusterId": "amv-bp1jghie90mc7m58",
+                "region": "cn-hangzhou",
+                "locale": "zh"
+            },
+            "graphParam": {
+                "x": 389,
+                "y": 282,
+                "layoutType": "Horizontal"
+            },
+            "isDeleted": false,
+            "name": "283985"
+        },
+        {
+            "nodeName": "ADB Spark word count",
+            "nodeType": 47,
+            "nodeContent": {
+                "uid": "123456789",
+                "groupName": "job_resource",
+                "data": {
+                    "args": [
+                        "ove-spark-test-hangzhou"
+                    ],
+                    "name": "word count job",
+                    "file": "oss: //ove-spark-test-hangzhou/spark-streaming-example-1.0-SNAPSHOT.jar",
+                    "className": "com.jj.streaming.KafkaBatchWordCount",
+                    "jars": "oss://ove-spark-test-hangzhou/kafka-clients-2.8.1.jar,oss://ove-spark-test-hangzhou/spark-sql-kafka-0-10_2.12-3.2.0.jar",
+                    "conf": {
+                        "spark.driver.resourceSpec": "small",
+                        "spark.executor.instances": 2,
+                        "spark.executor.resourceSpec": "small",
+                        "spark.adb.eni.enabled": "true",
+                        "spark.adb.eni.vswitchId": "vsw-23hqpleox",
+                        "spark.adb.eni.securityGroupId": "sg-bp11zuxd4l8nkhzy2ykb"
+                    }
+                },
+                "appType": "Batch",
+                "clusterId": "amv-bp1jghie90mc7m58",
+                "region": "cn-hangzhou",
+                "locale": "zh"
+            },
+            "graphParam": {
+                "x": 389,
+                "y": 282,
+                "layoutType": "Horizontal"
+            },
+            "isDeleted": false,
+            "name": "283985"
+        }
+    ],
+    "edges": [
+        {
+            "name": "7827399",
+            "edgeType": 0,
+            "nodeFrom": "283985",
+            "nodeEnd": "283985"
+        }
+    ]
+}
