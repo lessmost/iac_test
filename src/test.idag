@@ -35,88 +35,48 @@
         }
         
     },
-    "nodes": [
-        {
-            "nodeName": "ADB Spark filter ",
-            "nodeType": 47,
-            "nodeContent": {
-                "uid": "1673826650152166",
-                "groupName": "job_resource",
-                "data": {
-                    "args": [
-                        "kafka_groupId2",
-                        "ove-spark-test-hangzhou"
-                    ],
-                    "name": "filter job",
-                    "file": "oss://bucket/spark-streaming-example-1.0-SNAPSHOT.jar",
-                    "className": "com.jj.streaming.KafkaBatchFilter",
-                    "jars": "oss://bucket/kafka-clients-2.8.1.jar,oss://bucket/spark-sql-kafka-0-10_2.12-3.2.0.jar",
-                    "conf": {
-                        "spark.driver.resourceSpec": "small",
-                        "spark.executor.instances": 2,
-                        "spark.executor.resourceSpec": "small",
-                        "spark.adb.eni.enabled": "true",
-                        "spark.adb.eni.vswitchId": "vsw-23hqpleox",
-                        "spark.adb.eni.securityGroupId": "sg-xxxxx"
-                    }
-                },
-                "appType": "Batch",
-                "appName": "batchjobfilter",
-                "clusterId": "amv-bp1jghie90mc7m58",
-                "region": "cn-hangzhou",
-                "locale": "zh"
-            },
-            "graphParam": {
-                "x": 389,
-                "y": 282,
-                "layoutType": "Horizontal"
-            },
-            "isDeleted": false,
-            "name": "283985"
-        },
-        {
-            "nodeName": "ADB Spark word count",
-            "nodeType": 47,
-            "nodeContent": {
-                "uid": "123456789",
-                "groupName": "job_resource",
-                "data": {
-                    "args": [
-                        "ove-spark-test-hangzhou"
-                    ],
-                    "name": "word count job",
-                    "file": "oss://bucket/spark-streaming-example-1.0-SNAPSHOT.jar",
-                    "className": "com.jj.streaming.KafkaBatchWordCount",
-                    "jars": "oss://bucket/kafka-clients-2.8.1.jar",
-                    "conf": {
-                        "spark.driver.resourceSpec": "small",
-                        "spark.executor.instances": 2,
-                        "spark.executor.resourceSpec": "small",
-                        "spark.adb.eni.enabled": "true",
-                        "spark.adb.eni.vswitchId": "vsw-23hqpleox",
-                        "spark.adb.eni.securityGroupId": "sg-bp11zuxd4l8nkhzy2ykb"
-                    }
-                },
-                "appType": "Batch",
-                "clusterId": "amv-bp1jghie90mc7m58",
-                "region": "cn-hangzhou",
-                "locale": "zh"
-            },
-            "graphParam": {
-                "x": 389,
-                "y": 282,
-                "layoutType": "Horizontal"
-            },
-            "isDeleted": false,
-            "name": "283985"
-        }
-    ],
-    "edges": [
-        {
-            "name": "7827399",
-            "edgeType": 0,
-            "nodeFrom": "283985",
-            "nodeEnd": "283985"
-        }
-    ]
+"edges": [
+    {
+      "edgeType": 0,
+      "nodeEnd": "2281",
+      "nodeFrom": "2280",
+      "name": "704"
+    },
+    {
+      "edgeType": 0,
+      "nodeEnd": "2282",
+      "nodeFrom": "2281",
+      "name": "705"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "2280",
+      "nodeContent": {
+        "dbId": 583061,
+        "dbType": "mysql",
+        "locale": "zh",
+        "sql": "/* 请使用当前节点所选择的数据库语法编写SQL */\ninsert into `dest`( `c1`, `c2`)\nvalues (5, 'beautiful')"
+      },
+      "displayName": "单实例SQL-1",
+      "nodeType": "NORMAL_SQL"
+    },
+    {
+      "name": "2281",
+      "nodeContent": {
+        "dbId": 583061,
+        "dbType": "mysql",
+        "locale": "zh",
+        "sql": "/* 请使用当前节点所选择的数据库语法编写SQL */ \n\ninsert into `dest`( `c1`, `c2`)\nvalues (6, 'beautiful')"
+      },
+      "displayName": "单实例SQL-2",
+      "nodeType": "NORMAL_SQL"
+    },
+    {
+      "name": "2282",
+      "nodeContent": {},
+      "displayName": "Notebook-1",
+      "nodeType": "DMS_NOTEBOOK"
+    }
+  ]
 }
