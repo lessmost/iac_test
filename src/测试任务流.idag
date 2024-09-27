@@ -1,9 +1,0 @@
-{
-  "version": "1.0",
-  "kind": "pipeline",
-  "metadata": {
-    "name": "d-80b0036356024e30b0d01267885632c0",
-    "displayName": "测试任务流.idag",
-    "enable": true
-  }
-}

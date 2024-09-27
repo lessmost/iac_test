@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "kind": "pipeline",
+  "metadata": {
+    "name": "d-f20bdfe02bd942789ac63b78d740c9d3",
+    "displayName": "test2.idag",
+    "enable": true
+  }
+}
