@@ -1,9 +1,1 @@
-{
-  "version": "1.0",
-  "kind": "pipeline",
-  "metadata": {
-    "name": "d-40cc3d50a6fa4050b51308721108fe79",
-    "displayName": "taskflow.idag",
-    "enable": true
-  }
-}
+{"version":"1.0","kind":"pipeline","metadata":{"name":"d-40cc3d50a6fa4050b51308721108fe79","displayName":"taskflow.idag","enable":true},"nodes":[{"displayName":"单实例SQL-1","name":"n-f726098789aa47b1a49b837577ea38fe","nodeType":"NORMAL_SQL","nodeContent":{},"nodeParam":{}}]}
